@@ -1,7 +1,7 @@
 renderSongs();
 function renderSongs(){
 	let renderNameSong = "",
-		renderImg = document.querySelector('.pla_f');
+		renderImg = document.querySelector('.preview');
 	for(let key of dataSongs){
 		if(key.id === 1){
 		renderImg.style.background = `url(/data/player/img/${key.urlImg})`;

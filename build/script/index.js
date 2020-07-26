@@ -10,7 +10,7 @@ renderSongs();
 
 function renderSongs() {
   var renderNameSong = "",
-      renderImg = document.querySelector('.pla_f');
+      renderImg = document.querySelector('.preview');
 
   var _iterator = _createForOfIteratorHelper(dataSongs),
       _step;
