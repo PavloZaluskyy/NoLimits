@@ -11,7 +11,7 @@ a{
 }
 
 ul > li{
-	list-style:none;
+	list-style: none;
 	display: inline;
 } 
 header{
@@ -166,7 +166,67 @@ section > div > #music > .player{
 	flex-wrap: wrap;
 	justify-content: flex-start;	
 }
-section > div > #music > .player > .preview{
-	width: 45%;
-	min-height: 600px;
+section > div > #music > .player > .example{width: 100%;}
+section > div > #music > .player > .example> .top_play{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+section > div > #music > .player > .example> .top_play> .pla_f{
+	width: 60%;
+	margin: 15px 0;
+	background-repeat: no-repeat!important;
+	background-size: 100% 100%!important;
+}
+section > div > #music > .player > .example> .top_play> .song{
+	width: 40%;
+	background: #0F0E0E;
+}
+section > div > #music > .player > .example> .top_play> .song> h4{
+	font-family: "Blackadder ITC Regular", sans-serif;
+	font-size: 34px;
+	text-align: center;
+	color: #fff;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #6A6768;
+}
+section > div > #music > .player > .example> .top_play> .song > ul {overflow-y: auto;}
+section > div > #music > .player > .example> .top_play> .song > ul > li{
+	border-bottom: 1px solid #6A6768;
+	font-family: "Times New Roman", sans-serif;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 15px;
+	display: block;
+	font-size: 14px;
+}
+section > div > #music > .player > .example> .m_player{
+	width: 100%;
+	background: green;
+	display: flex;
+	flex-wrap: wrap;
+}
+.m_pl, .m_title, .m_artist{
+	display: none;
+}
+.volume > .icon_volume{
+	width: 35px;
+	height: 35px;
+	background-image: url("../images/volume.png");
+	background-repeat: no-repeat;
+}
+.m_controls > .m_rew, .m_controls > .m_fwd{
+	height: 35px;
+	width: 75px;
+	background-repeat: no-repeat;
+}
+.m_controls > .m_rew {background-image: url("../images/previousSong.png");}
+.m_controls > .m_fwd{background-image: url("../images/previousSong.png");}
+.m_controls > .m_play, .m_controls > .m_pause{
+	width: 60px;
+	height: 60px;
+	background-image: url("../images/playMain.png");
+	background-repeat: no-repeat;
 }
