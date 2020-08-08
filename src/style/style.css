@@ -153,9 +153,8 @@ section > div > #about > .moreInfo{
 	margin: 10px auto 0;
 }
 section > div > #music{
-	flex: 1;
+	flex: 1.5;
 	border: 1px solid green;
-	
 }
 section > div > #music > .player{
 	width: auto;
@@ -204,27 +203,55 @@ section > div > #music > .player >  .top_play> .song > ul > li{
 }
 section > div > #music > .player >  .panelControle{
 	width: 100%;
-	background: green;
 	display: flex;
+	margin-top: 12px;
+	justify-content: space-around;
 	flex-wrap: wrap;
 }
+
+.panelVolume, .mainControls{display: flex; align-items: center;}
+.panelVolume, #time{margin: 0 5px}
 
 .panelVolume > .icon_volume{
 	width: 35px;
 	height: 35px;
+	margin-right: 12px;
 	background-image: url("../images/volume.png");
 	background-repeat: no-repeat;
 }
-.mainControls > .iconPrevious, .mainControls > .iconPrevious{
+.panelVolume > .statusVolume{
+	min-width: 90px;
+    height: 7px;
+    align-self: center;
+    border: 1px solid red;}
+
+.iconPrevious,  .iconNext, .playOrPause{
+	cursor: pointer;
+}
+.mainControls > .iconPrevious, .mainControls > .iconNext{
 	height: 35px;
 	width: 75px;
 	background-repeat: no-repeat;
 }
+.active{font-weight: bold; background: red;}
 .mainControls > .iconPrevious {background-image: url("../images/previousSong.png");}
-.mainControls > .iconPrevious{background-image: url("../images/previousSong.png");}
-.mainControls > .iconPlay, .mainControls > .iconPause{
+.mainControls > .iconNext{background-image: url("../images/nextSong.png");}
+.mainControls > .playOrPause{
 	width: 60px;
 	height: 60px;
 	background-image: url("../images/playMain.png");
 	background-repeat: no-repeat;
+}
+#time{
+	align-self: center;
+ 	color: #656363; 
+ 	display: block;
+    width: 70px;
+    text-align: right;
+ 	font-family: "Blackadder ITC Regular", sans-serif; 
+ 	font-size: 34px;}
+.mainStatus{
+    width: 100%;
+    height: 5px;
+    border: 1px solid red;
 }
