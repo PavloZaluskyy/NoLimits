@@ -1,118 +1,32 @@
 "use strict";
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+$(document).ready(function () {
+  var Swidth = document.body.clientWidth;
+  var mobile_menu = true;
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var count = 1,
-    togglePlay = true;
-var audio = new Audio();
-renderSongs();
-document.querySelector(".iconPrevious").addEventListener('click', function () {
-  prev();
-  showPreview();
-  play();
-});
-document.querySelector(".iconNext").addEventListener('click', function () {
-  next();
-  showPreview();
-  play();
-});
-document.querySelector(".iconPlay").addEventListener('click', function () {
-  togglePlay = !togglePlay;
-
-  if (togglePlay !== true) {
-    removeClass(".playOrPause", ".iconPlay");
-    document.querySelector(".playOrPause").classList.add("iconPause");
-    play();
-  } else {
-    removeClass(".playOrPause", ".iconPause");
-    document.querySelector(".playOrPause").classList.add("iconPlay");
-    pause();
+  if (Swidth < 480) {
+    document.querySelector('.mainMenu').style.display = 'none';
   }
 });
-document.querySelector(".m_playlist").addEventListener('click', function (event) {
-  count = +event.target.dataset.songid + 1;
-  prev();
-  showPreview();
-  play();
+var toggleShowHistory = true;
+document.querySelector(".moreInfo").addEventListener("click", function () {
+  toggleShowHistory = !toggleShowHistory;
+  !toggleShowHistory ? document.querySelector('.showHistory').style.display = 'inline' : document.querySelector('.showHistory').style.display = 'none';
 });
 
-function renderSongs() {
-  var renderNameSong = "",
-      renderImg = document.querySelector('.preview');
-
-  var _iterator = _createForOfIteratorHelper(dataSongs),
-      _step;
-
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var key = _step.value;
-
-      if (key.id === 1) {
-        renderImg.style.background = "url(/data/player/img/".concat(key.urlImg, ")");
-        renderNameSong += "<li data-songId=\"".concat(key.id, "\" class=\"active songs\">").concat(key.nameSong, "</li>");
-      } else renderNameSong += "<li data-songId=\"".concat(key.id, "\" class=\"songs\">").concat(key.nameSong, "</li>");
-    }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
-
-  document.querySelector('.m_playlist').innerHTML = renderNameSong;
-  audio.src = "../data/player/songs/".concat(dataSongs[0].urlSong);
+function slowScroll(id) {
+  var offset = 0;
+  $('html, body').animate({
+    scrollTop: $(id).offset().top - offset
+  }, 500);
+  return false;
 }
 
-function removeClass(yourSelectClass, removeYourClass) {
-  var selectClass = document.querySelector(yourSelectClass);
-  selectClass.classList.remove(removeYourClass);
-}
-
-function play() {
-  audio.play();
-  setInterval(function () {
-    document.querySelector('#time').innerText = "".concat(Math.floor(audio.currentTime / 60), " : ").concat((audio.currentTime % 60).toFixed(0), " ");
-  }, 1000);
-}
-
-function pause() {
-  audio.pause();
-}
-
-function showPreview() {
-  var renderImg = document.querySelector('.preview');
-  renderImg.style.background = "url(/data/player/img/".concat(dataSongs[count - 1].urlImg, ")");
-}
-
-function next() {
-  removeClass("li.active", "active");
-
-  if (count < dataSongs.length) {
-    count++;
-    document.querySelector("[data-songId=\"".concat(count, "\"]")).classList.add("active");
-  } else {
-    count = 1;
-    document.querySelector("[data-songId=\"".concat(count, "\"]")).classList.add("active");
-  }
-
-  audio.src = "../data/player/songs/".concat(dataSongs[count - 1].urlSong);
-  togglePlay = false;
-}
-
-function prev() {
-  removeClass("li.active", "active");
-
-  if (count > 1) {
-    count--;
-    document.querySelector("[data-songId=\"".concat(count, "\"]")).classList.add("active");
-  } else {
-    count = dataSongs.length;
-    document.querySelector("[data-songId=\"".concat(count, "\"]")).classList.add("active");
-  }
-
-  togglePlay = false;
-  audio.src = "../data/player/songs/".concat(dataSongs[count - 1].urlSong);
+function toggleMobileMenu() {
+  $("#myLinks").slideToggle("slow"); // var x = document.getElementById("myLinks");
+  // if (x.style.display === "block") {
+  //   x.style.display = "none";
+  // } else {
+  //   x.style.display = "block";
+  // }
 }

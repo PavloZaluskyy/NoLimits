@@ -4,6 +4,13 @@ body {
 	height: auto;
 	background: #282728;
 }
+
+input[type=range] {
+	-webkit-appearance: none; 
+	
+	background: transparent; 
+  }
+
 a{
 	text-decoration: none;
 	color: #fff;
@@ -19,62 +26,96 @@ header{
 	height: 99.5vh;
 	background-image: url("../images/guitar-bass-instrument-black-electrically-music.png");
 	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .container{
 	width: auto;
 	margin: 0 auto;
 	max-width: 1000px;
 }
-.headerBottom{
-	top: 94%;
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: auto;
-	max-height: 50px;
-	-webkit-box-shadow: 0px 3px 1px 0px #404040;
-	-moz-box-shadow: 0px 3px 1px 0px #404040;
-	box-shadow: 0px 3px 1px 0px #404040;
-	min-height: 40px;
-	background-image: url("../images/skin.png");
+
+
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(100px);
+	}
 }
 
-.playerOneSong{
+.scrollMouseBottom{
+	width: 50px;
+}
+svg #wheel {
+	animation: scroll ease 1.5s infinite;
+}
+
+
+svg,
+svg::before,
+svg::after {
+	box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+}
+
+/*MOBILE MENU*/
+
+.mobileMenu{	
+	position: fixed;
+	width: 100%;
+	z-index: 3;	
+}
+.topnav {
+	overflow: hidden;
+	background: url("../images/skin02.png");
+}
+.topMobileMenu{
 	width: 100%;
 	display: flex;
+	max-height: 150px;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+	
 }
-.playerOneSong .play{
-	width: 58px;
-	height: 58px;
-	cursor: pointer;
-	background-image: url("../images/playLastSong.png");
+
+.topMobileMenu .mobileMenuLogo img{
+	width: 85%;
 }
-.playerOneSong .status{
-	width: 70%;
-	height: 7px;
-	cursor: pointer;
-	margin: auto 0;
-	background: #282728;
-}
-.playerOneSong .status .active{
-	width: 50%;
-	height: 100%;
-	background: #B0B0B0;
-}
-.playerOneSong .time{
-	font-size: 18px;
-	color: #b0b0b0;
-	font-family: 'Myriad Pro Regular', sans-serif;
-}
-nav{
+
+  .topnav #myLinks {
+	display: none;
+	width: 100%;
+	height: 90vh;
+	transition: all.6s ease; 
+    -ms-transition: all.6s ease;
+ 	-o-transition: all.6s ease;
+ 	-webkit-transition: all.6s ease;
+ 	-moz-transition: all.6s ease;
+  }
+  
+   #myLinks a {
+	color: white;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	display: block;
+  } 
+ 
+.mainMenu{
+	/* position: fixed;
+	width: 100%;
+	z-index: 2; */
 	height: auto;
 	background-image: url("../images/skin.png");
 	background-repeat: repeat-x;
 	text-align: center;
 	margin-top: 10px;
+	
 }
 .menu{
 	width: 100%;
@@ -102,7 +143,6 @@ nav{
   text-shadow: 2px 5px 5px #FFFFFF;}
 section{
   	width: 100%;
-  	//height: auto;
 }
 .aboutBlock > div{
 	display: flex;
@@ -118,13 +158,26 @@ section > div > #about{
 	justify-content: space-between;
 	align-items: center;
 }
-section > div > #about > .part{
-	width: 45%;
-	margin-top: 10px; 
-	margin-bottom: 40px;
+section > div > #about> h2{
+	width: 100%;
+	font-family: "Blackadder ITC Regular", sans-serif;
+	font-size: 48px;
 	text-align: center;
+	color: #fff;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	}
+section > div > #about > .part{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 20px 0;
+	text-align: center;
+	border-bottom: 1px solid #707070;
 }
-section > div > #about > .part > p{
+section > div > #about > .part > div > p{
   font-size: 16px;
   font-family: "Times New Roman", sans-serif;;
   font-style: italic;
@@ -132,15 +185,31 @@ section > div > #about > .part > p{
   line-height: 1.2;
 }
 section > div > #about > .part > div{	
-	max-width: 100%;
+	margin: auto;
 	height: auto;
 } 
 section > div > #about > .part > div> img{
-	max-width: 100%;
+	width: auto;
 	display: block;
 	height: auto;
 } 
-section > div > #about > .moreInfo{
+section > div > #about > .history{
+	width: 100%;
+	text-align: center;
+}
+section > div > #about > .history > div{
+	display: none;
+	transition: all.6s ease; 
+    -ms-transition: all.6s ease;
+ 	-o-transition: all.6s ease;
+ 	-webkit-transition: all.6s ease;
+ 	-moz-transition: all.6s ease;
+}
+section > div > #about > .history > div > p{
+	color: #707070;
+	padding: 15px 0;
+}
+section > div > #about > .history >  .moreInfo{
 	height: auto;
 	font-size: 36px;
 	color: #000;
@@ -152,6 +221,7 @@ section > div > #about > .moreInfo{
 	background: #705134;
 	margin: 10px auto 0;
 }
+
 section > div > #music{
 	flex: 1.5;
 	border: 1px solid green;
@@ -205,6 +275,7 @@ section > div > #music > .player >  .panelControle{
 	width: 100%;
 	display: flex;
 	margin-top: 12px;
+	margin-bottom: 12px;
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
@@ -252,6 +323,37 @@ section > div > #music > .player >  .panelControle{
  	font-size: 34px;}
 .mainStatus{
     width: 100%;
-    height: 5px;
+	height: 5px;	
     border: 1px solid red;
 }
+.statusVolume::-moz-range-track {
+	-webkit-appearance: none;
+	height: 1.5rem;
+	width: auto;
+	border-radius: 0.75rem;
+	background: red;
+  }
+.statusVolume::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 15px;
+ 	width: 15px;
+	border-radius: .75rem;
+	background: red;
+	cursor: pointer;
+  }
+.mainStatus::-moz-range-track {
+	-webkit-appearance: none;
+	height: 1.5rem;
+	width: auto;
+	border-radius: 0.75rem;
+	background: red;
+  }
+  
+  .mainStatus::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 15px;
+ 	width: 15px;
+	border-radius: .75rem;
+	background: red;
+	cursor: pointer;
+  }
