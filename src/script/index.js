@@ -1,20 +1,6 @@
-$(document).ready(function(){
-  var Swidth = document.body.clientWidth;
-  var mobile_menu = true;
-  
-  if (Swidth < 480) {
-    document.querySelector('.mainMenu').style.display = 'none'
-   
-  }
-});
-
-let toggleShowHistory = true
 document.querySelector(".moreInfo").addEventListener("click", () => {
-    toggleShowHistory = !toggleShowHistory;
-    (!toggleShowHistory)?
-        document.querySelector('.showHistory').style.display = 'inline'
-        : document.querySelector('.showHistory').style.display = 'none'
-})
+  $('.showHistory').slideToggle(300)
+  })
 
 function slowScroll(id){	
     let offset = 0;
@@ -25,14 +11,8 @@ function slowScroll(id){
 }	
 
 function toggleMobileMenu() {
-  $("#myLinks").slideToggle("slow");
-    // var x = document.getElementById("myLinks");
-    // if (x.style.display === "block") {
-    //   x.style.display = "none";
-    // } else {
-    //   x.style.display = "block";
-    // }
-  }
+  $('#myLinks').slideToggle(300)
+}
 
 
 
