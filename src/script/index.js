@@ -1,6 +1,4 @@
-document.querySelector(".moreInfo").addEventListener("click", () => {
-  $('.showHistory').slideToggle(300)
-  })
+document.querySelector(".moreInfo").addEventListener("click", () => $('.showHistory').slideToggle(300))
 
 function slowScroll(id){	
     let offset = 0;
@@ -10,9 +8,10 @@ function slowScroll(id){
     return false;
 }	
 
-function toggleMobileMenu() {
-  $('#myLinks').slideToggle(300)
-}
+let toggleMobileMenu = () => $('#myLinks').slideToggle(300)
 
+function createElementImageForSlider(url){
+
+}
 
 

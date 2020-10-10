@@ -112,9 +112,6 @@ svg::after {
   } 
  
 .mainMenu{
-	/* position: fixed;
-	width: 100%;
-	z-index: 2; */
 	height: auto;
 	background-image: url("../images/skin.png");
 	background-repeat: repeat-x;
@@ -122,7 +119,6 @@ svg::after {
 	margin-top: 10px;
 	
 }
-
 
 .menu{
 	width: 100%;
@@ -229,10 +225,7 @@ section > div > #about > .history >  .moreInfo:hover{
 	transition: all .4s ease;
 }
 
-section > div > #music{
-	padding: 0 37px 55px;
-	border: 1px solid green;
-}
+section > div > #music{padding: 0 37px 55px;}
 section > div > #music > .player{
 	width: auto;
 	padding: 15px;
@@ -242,7 +235,6 @@ section > div > #music > .player{
 	flex-wrap: wrap;
 	justify-content: flex-start;	
 }
-/*section > div > #music > .player > .example{width: 100%;}*/
 section > div > #music > .player >  .top_play{
 	width: 100%;
 	display: flex;
@@ -364,6 +356,32 @@ section > div > #music > .player >  .panelControle{
 	background: red;
 	cursor: pointer;
   }
+.slider{
+	width: auto;
+    max-width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.fonBack{
+	width: 90%;
+	margin: auto;
+	height: 100%;
+	padding-top: 15px;
+	background-image: url('../images/backFon.png');
+	background-size: 100% 100%;
+}
+.fonFront{
+	width: 100%;
+	height: 98%;
+	
+	margin-left: 15px;
+	background-image: url('../images/frontFon.png');
+	background-size: 100% 100%;
+}
+
 			/*MEDIA TEGS*/
 @media(max-width: 800px) { .mainMenu{
 	display: none;

@@ -1,7 +1,7 @@
 "use strict";
 
 document.querySelector(".moreInfo").addEventListener("click", function () {
-  $('.showHistory').slideToggle(300);
+  return $('.showHistory').slideToggle(300);
 });
 
 function slowScroll(id) {
@@ -12,6 +12,8 @@ function slowScroll(id) {
   return false;
 }
 
-function toggleMobileMenu() {
-  $('#myLinks').slideToggle(300);
-}
+var toggleMobileMenu = function toggleMobileMenu() {
+  return $('#myLinks').slideToggle(300);
+};
+
+function createElementImageForSlider(url) {}
