@@ -159,7 +159,7 @@ section > div > #about{
 	justify-content: space-between;
 	align-items: center;
 }
-section > div > #about> h2{
+.title{
 	width: 100%;
 	font-family: "Blackadder ITC Regular", sans-serif;
 	font-size: 48px;
@@ -407,9 +407,38 @@ section > div > #music > .player >  .panelControle{
 .imgSlayder{
 	float: left;
 	height: 381px;
-	
-	/*background: #fff;*/
 }
+#contacts{width: 100%;
+	max-height: 50vh;}
+#contacts .container .contant{
+	margin: 35px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.phone a, .mail a{
+	font-size: 2.0rem;
+	color: #707070;;
+}
+.phone a:hover, .mail a:hover{
+	color: #fff
+}
+.phone i, .mail i{
+	margin-right: 1.5rem;
+	margin-bottom: 70px;
+}
+footer{
+	width: 100%;
+	background: #464646;
+	padding: 15px 0;
+}
+footer span{
+	font-family: "Times New Roman", sans-serif;
+	font-style: italic;
+}
+
 
 			/*MEDIA TEGS*/
 @media(max-width: 800px) { .mainMenu{
@@ -448,13 +477,16 @@ section > div > #music > .player >  .panelControle{
 @media (min-width: 879px) and (max-width: 1263px) { .slayder { width: 760px;}
 }
 @media (max-width: 893px) { .fonFront{margin-left: 0;}}
-@media (max-width: 878px) { .slayder{width: 380px;}}
+@media (max-width: 878px) { .slayder{width: 380px;} .phone, .mail{width: 100%; text-align: center; border: 0;}}
 @media (max-width: 499px) { 
 	.slider{flex-wrap: wrap; height: auto; padding: 30px 0; border-top: 2px solid #707070; border-bottom: 2px solid #707070;}
 	.arrowBack{order: 2;}
 	.fonBack{order: 1;  padding: 15px 0;}
 	.arrowForwardt{order: 3;}
+	.phone i, .mail i{ margin-right: 0px; margin-bottom: 40px;}
+	.phone a, .mail a{font-size: 1.5rem;}
 }
+
 @media (max-width: 423px) { .fonBack{width: 100%;}}
-@media (min-width: 360px) and (max-width: 379px) { .imgSlayder{width: 300px; height: 300px; margin: 0 40px;}}
-@media (min-width: 320px) and (max-width: 359px) { .imgSlayder{width: 300px; height: 100%; margin: 0 calc((380px - 300px) / 2);}}
+/* @media (min-width: 360px) and (max-width: 379px) { .imgSlayder{width: 300px; height: 300px; margin: 0 40px;}} */
+@media (min-width: 320px) and (max-width: 380px) { .imgSlayder{width: 100vw; height: 100%; margin-right: calc(380px - 100vw);}}
